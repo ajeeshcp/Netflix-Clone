@@ -16,7 +16,12 @@
     .nav-section{
         padding: 0.7rem;
     }
+    .input-text:focus{
+        width: 100px;
+    }
+
 }
+
 .search-item{
     background-color: rgb(167, 160, 160);
     padding: 5px 0;
@@ -38,7 +43,7 @@
 }
 
 .input-text:focus{
-    width: 250px;
+    width: 200px;
 }
 .btn-search{
     outline: none;

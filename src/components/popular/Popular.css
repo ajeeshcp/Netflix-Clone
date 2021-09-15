@@ -121,3 +121,12 @@
         font-size: 15px;
     }
 }
+
+.search-close{
+    font-size: 1.5rem;
+    color: red;
+    cursor: pointer;
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+}

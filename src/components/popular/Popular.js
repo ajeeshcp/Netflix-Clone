@@ -8,21 +8,24 @@ import axios from "../../constants/Axios" ;
 import { useState } from 'react';
 import { IMG_URL,API_KEY } from '../../constants/Constants';
 import YouTube from 'react-youtube';
+import { useHistory } from 'react-router-dom';
 
 function Popular(props) {
 
     const [movie, setMovie] = useState([]) ;
     const [key, setKey] = useState("")
     const [trailer, setTrailer] = useState()
-    const {url,title} = props;
-    
-    // useEffect(() => {
-    //     axios.get(`${url}`).then((res) => {
-    //         setMovie(res.data.results)
-    //         console.log("kitti moc",res.data.results);
-    //     })
+    const {url,title,isTrue} = props;
 
-    // }, [])
+    const history = useHistory()
+    
+    useEffect(() => {
+        axios.get(`${url}`).then((res) => {
+            setMovie(res.data.results)
+            console.log("kitti moc",res.data.results);
+        })
+
+    }, [])
 
     const handleMovie = (id) => {
         
@@ -37,25 +40,35 @@ function Popular(props) {
         })
       }
 
+
       const opts = {
         height: '390',
         width: '100%',
         playerVars: {
           autoplay: 0,
         },
-      };
+      }
+
+      
 
 
     return (
         <div>
-            <Header />
+            {
+                isTrue ? <i class="bi bi-x-circle search-close" onClick={
+                    () =>{
+                        history.push("/")
+                    }
+                }></i> : <Header /> 
+            }
+            
             <div className="popular-section">
                 <h2 className="popular-title px-5">{title}</h2>
                 <div className="image-wrapper d-flex flex-wrap px-5">
                     {
                         movie.map((item) => {
                             return <div className="pop-images">
-                                        <img className="img-item flex-wrap me-3 mt-3 flex-grow-1 " src={`${IMG_URL+item.backdrop_path}`} alt="" />
+                                        <img className="img-item flex-wrap me-3 mt-3 flex-grow-1 " src={`${IMG_URL+item.backdrop_path}`} alt={item.backdrop_path ? null : "Loading.."} />
                                         <div className="image-text">
                                         <i class="bi bi-play-circle" onClick={() => {
                                             setTrailer(item)

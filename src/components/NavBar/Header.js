@@ -10,7 +10,7 @@ function Header() {
     
     const setSearch = useContext(mySearch) ;   
 
-    console.log("ser",setSearch);
+    
 
     const history = useHistory();  
 
@@ -56,6 +56,7 @@ function Header() {
                             <i class="bi bi-search"></i>
                             <input type="text" className="input-text" onChange={
                                 (e) => {
+                                    
                                     setSearch(e.target.value)
                                     
                                 }
