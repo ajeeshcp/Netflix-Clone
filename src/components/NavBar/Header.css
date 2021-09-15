@@ -1,0 +1,55 @@
+.nav-img{
+    width: 125px;
+}
+.avatar-img{
+    width: 35px;
+}
+.nav-item{
+    font-weight: bold;
+    font-size: 18px;
+
+}
+.navbar-section{
+    background-color: #111;
+}
+@media screen and (max-width: 558px){
+    .nav-section{
+        padding: 0.7rem;
+    }
+}
+.search-item{
+    background-color: rgb(167, 160, 160);
+    padding: 5px 0;
+    border-radius: 20px;
+    
+}
+.bi-search{
+    font-size: 1rem;
+    padding-left: 1rem;
+    padding-right: 0.5rem;
+}
+.input-text{
+    border: 0;
+    outline: none;
+    background: transparent;
+    width: 5px;
+    padding-right: 2rem;
+    transition: all 1s ease-in-out;
+}
+
+.input-text:focus{
+    width: 250px;
+}
+.btn-search{
+    outline: none;
+    border: 0;
+    background-color: rgb(126, 126, 126);
+    border-radius: 20px;
+    margin-right: 5px;
+    padding:2px 10px;
+    transition: all 0.5s ease-in-out;
+}
+.btn-search:hover{
+    background-color: red;
+    color: rgb(192, 187, 187);
+}

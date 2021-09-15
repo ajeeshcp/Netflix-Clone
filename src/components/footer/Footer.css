@@ -1,0 +1,24 @@
+.footer-img{
+    margin: 2rem 0;
+    width: 140px;
+}
+.footer-wrapper{
+    padding: 2rem 0; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: rgb(226, 214, 214);
+}
+.footer-text{
+    font-weight: 100;
+    margin: 0.5rem 0;
+}
+@media screen and (max-width: 558px){
+    .footer-img{
+        width: 100px;
+    }
+    .footer-text{
+        font-size: 15px;
+    }
+}
