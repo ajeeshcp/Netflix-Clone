@@ -1,5 +1,6 @@
 .nav-img{
     width: 125px;
+    cursor: pointer;
 }
 .avatar-img{
     width: 35px;
