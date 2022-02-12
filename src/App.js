@@ -3,14 +3,13 @@ import './App.css';
 import Popular from './components/popular/Popular';
 import Home from './Home';
 import {popular,toprated,upcoming,trending} from "./constants/Urls"
-import { createContext,useState } from 'react';
+import { useState } from 'react';
 import { API_KEY } from './constants/Constants';
 import {mySearch} from "./constants/context" ;
 
 
 function App() {
   const [searching, setSearch] = useState(" ") ;
-  console.log("s",searching);
   return (
     <div className="App">
       

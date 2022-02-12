@@ -1,6 +1,7 @@
 .footer-img{
     margin: 2rem 0;
     width: 140px;
+    cursor: pointer;
 }
 .footer-wrapper{
     padding: 2rem 0; 

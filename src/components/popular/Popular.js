@@ -1,6 +1,5 @@
-import React from 'react'
-import { useEffect } from 'react';
-import { Container, Row,Col,Image } from 'react-bootstrap'
+import React,{useEffect} from 'react'
+import { Container, Spinner} from 'react-bootstrap'
 import Footer from '../footer/Footer';
 import Header from '../NavBar/Header'
 import "../popular/Popular.css";
@@ -16,13 +15,12 @@ function Popular(props) {
     const [trailer, setTrailer] = useState()
     const {url,title} = props;
     
-    // useEffect(() => {
-    //     axios.get(`${url}`).then((res) => {
-    //         setMovie(res.data.results)
-    //         console.log("kitti moc",res.data.results);
-    //     })
+    useEffect(() => {
+        axios.get(`${url}`).then((res) => {
+            setMovie(res.data.results)
+        })
 
-    // }, [])
+    }, [])
 
     const handleMovie = (id) => {
         
@@ -49,24 +47,25 @@ function Popular(props) {
     return (
         <div>
             <Header />
-            <div className="popular-section">
+            <div className="popular-section" style={{textAlign:"center"}}>
                 <h2 className="popular-title px-5">{title}</h2>
                 <div className="image-wrapper d-flex flex-wrap px-5">
                     {
-                        movie.map((item) => {
-                            return <div className="pop-images">
-                                        <img className="img-item flex-wrap me-3 mt-3 flex-grow-1 " src={`${IMG_URL+item.backdrop_path}`} alt="" />
+                       movie ?  movie.map((item) => {
+                            return <div key={item.id} className="pop-images">
+                                        <img className="img-item flex-wrap me-3 mt-3 flex-grow-1 " src={`${IMG_URL+item.backdrop_path}`} alt="Loading.." />
                                         <div className="image-text">
-                                        <i class="bi bi-play-circle" onClick={() => {
+                                        <i className="bi bi-play-circle" onClick={() => {
                                             setTrailer(item)
-                                            handleMovie(item.id)
+                                            handleMovie(item.id);
+                                            window. scrollTo({top: 0, behavior: 'smooth'});
 
                                         }}></i>
                                             <h2 className="pop-title">{item.title ? item.title : " "}</h2>
                                             <p>{item.overview ? (item.overview).substring(0,50) : "" }</p>
                                         </div>
                                 </div>
-                        })
+                        }) : <Spinner animation="border" />
                     }
                 </div>
 
@@ -74,7 +73,7 @@ function Popular(props) {
                     trailer ?  <div className="trailer-wrap">
                     <div className="popup-trailer">
                         <div className="pop-banner" style={{backgroundImage:`url(${trailer ? IMG_URL+trailer.backdrop_path : " "})`}}>
-                        <i class="bi bi-x-circle-fill" onClick={
+                        <i className="bi bi-x-circle-fill" onClick={
                             () =>{
                                 setTrailer()
                             }
@@ -94,7 +93,7 @@ function Popular(props) {
                             }
                         </Container >
                         </div>
-                    </div> : " "
+                    </div> : <Spinner style={{color:"red", margin:"10px 0"}} animation="border" />
                       
 
                 }

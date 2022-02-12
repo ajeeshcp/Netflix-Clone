@@ -54,8 +54,8 @@ function Banner() {
                         ()=>{
                             handleMovie(movie.id)
                         }
-                    }><i class="bi bi-play-fill banner-i"></i>Play</button>
-                    <button className="button"><i class="bi bi-plus-lg  banner-i"></i>My list</button>
+                    }><i className="bi bi-play-fill banner-i"></i>Play</button>
+                    <button className="button"><i className="bi bi-plus-lg  banner-i"></i>My list</button>
                 </div>
             </div>  
             

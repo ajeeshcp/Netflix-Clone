@@ -1,5 +1,5 @@
 .banner{
-   
+   margin-top: 5rem;
    background-position: center;
    background-size: cover;
    background-repeat: no-repeat;
@@ -59,6 +59,9 @@
     }
     .description{
         font-size: 17px;
+    }
+    .banner{
+        padding-top: 12rem;
     }
     
 }

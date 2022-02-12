@@ -1,5 +1,6 @@
 .nav-img{
     width: 125px;
+    cursor: pointer;
 }
 .avatar-img{
     width: 35px;
@@ -12,16 +13,14 @@
 .navbar-section{
     background-color: #111;
 }
-@media screen and (max-width: 558px){
-    .nav-section{
-        padding: 0.7rem;
-    }
-}
+
 .search-item{
     background-color: rgb(167, 160, 160);
     padding: 5px 0;
     border-radius: 20px;
-    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .bi-search{
     font-size: 1rem;
@@ -38,7 +37,7 @@
 }
 
 .input-text:focus{
-    width: 250px;
+    width: 200px;
 }
 .btn-search{
     outline: none;
@@ -50,6 +49,22 @@
     transition: all 0.5s ease-in-out;
 }
 .btn-search:hover{
-    background-color: red;
-    color: rgb(192, 187, 187);
+    background-color: rgb(167, 173, 164);
+    color: #111
+}
+@media screen and (max-width: 558px){
+    .nav-section{
+        padding: 0.7rem;
+    }
+    .input-text{
+        width: 100px;
+        padding: 2px 0px;
+    }
+    .input-text:focus{
+        width: 100px;
+    }
+    .btn-search{
+        margin-right: 5px;
+    }
+    
 }

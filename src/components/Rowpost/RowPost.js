@@ -14,7 +14,6 @@ function RowPost(props) {
     
     useEffect(() => {
         axios.get(`${url}`).then((res) => {
-            
             setMovies(res.data.results)
         })
 
@@ -47,7 +46,7 @@ function RowPost(props) {
                 {
                     movies.map((item) => {
                         return (
-                            <div className="image-wrapper" onClick={
+                            <div key={item.id} className="image-wrapper" onClick={
                                 () =>{handleMovie(item.id)}
                             }>
                                 <img className={ isSmall ? "small-poster img-fluid" :"poster img-fluid"} src={`${IMG_URL+item.backdrop_path}`} alt="Netflix" />
